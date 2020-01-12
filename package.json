@@ -1,5 +1,5 @@
 {
-  "name": "react-native-custom-keyboard",
+  "name": "react-native-custom-keyboard-mroads",
   "title": "React Native Custom Keyboard",
   "version": "1.0.0",
   "description": "TODO",
@@ -33,9 +33,9 @@
     "type": "git",
     "url": "git+https://github.com/mroads/react-native-custom-keyboard.git"
   },
-  "author": "Vijay",
   "bugs": {
     "url": "https://github.com/mroads/react-native-custom-keyboard/issues"
   },
-  "homepage": "https://github.com/mroads/react-native-custom-keyboard#readme"
+  "homepage": "https://github.com/mroads/react-native-custom-keyboard#readme",
+  "author": {}
 }
