@@ -37,5 +37,8 @@
     "url": "https://github.com/mroads/react-native-custom-keyboard/issues"
   },
   "homepage": "https://github.com/mroads/react-native-custom-keyboard#readme",
-  "author": {}
+  "author": {
+    "name": "Vijay",
+    "email": "vjkrishna21@gmail.com"
+  }
 }
