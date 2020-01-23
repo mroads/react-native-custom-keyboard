@@ -96,7 +96,7 @@ class Keyboard extends Component<Props> {
       email: this.allIndices.emailNormalIndices,
     };
     this.state = {
-      indices: initialIndices[props.inputType],
+      indices: initialIndices[props.inputType || 'text'],
       isCaps: true,
       isSpecial: false,
       isAccent: false,
@@ -172,7 +172,7 @@ class Keyboard extends Component<Props> {
             isCaps: true,
           });
         } else {
-          this.setState(prevState => ({
+          this.setState((prevState) => ({
             isCaps: !!prevState.capsLock,
           }));
         }
@@ -257,7 +257,7 @@ class Keyboard extends Component<Props> {
             isCaps: true,
           });
         } else {
-          this.setState(prevState => ({
+          this.setState((prevState) => ({
             isCaps: !!prevState.capsLock,
           }));
         }
@@ -266,14 +266,18 @@ class Keyboard extends Component<Props> {
   }
 
   render() {
-    const { keyboardTitleStyle, title, size, theme } = this.props;
-    const { indices, isSpecial, isAccent, isCaps, capsLock } = this.state;
+    const {
+      keyboardTitleStyle, title, size = 'xlarge', theme = 'dark',
+    } = this.props;
+    const {
+      indices, isSpecial, isAccent, isCaps, capsLock,
+    } = this.state;
     const keyboardContainerStyle = [keyboardThemeConfig[theme].keyboardContainer];
     return (
       <View style={[styles.container, keyboardContainerStyle]}>
         {title ? <Text style={[styles.title, keyboardTitleStyle]}>{title}</Text> : null}
-        {indices &&
-          indices.map(index => (
+        {indices
+          && indices.map((index) => (
             <View
               style={{
                 flexDirection: 'row',
@@ -282,8 +286,8 @@ class Keyboard extends Component<Props> {
               }}
               key={index}
             >
-              {keyboardData[index] &&
-                keyboardData[index].map((char, index) => {
+              {keyboardData[index]
+                && keyboardData[index].map((char, index) => {
                   let text = char.digit ? char : char.text;
                   if (!isSpecial && !isAccent && text === 'abc') text = '!#$';
                   if (isSpecial && !isAccent && text === '!#$') text = 'abc';
@@ -299,8 +303,7 @@ class Keyboard extends Component<Props> {
                       theme={theme}
                       onPress={() => this.onPress(text)}
                       // eslint-disable-next-line prettier/prettier
-                      onLongPress={() => this.onLongPress(char.digit ? char.digit : text === 'shift' ? text : '')
-                      }
+                      onLongPress={() => this.onLongPress(char.digit ? char.digit : text === 'shift' ? text : '')}
                       key={text.digit ? text.digit + index : text + index}
                       keyboardButtonContainerStyle={[
                         char.isDomain
