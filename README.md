@@ -1,4 +1,4 @@
-![](keyboardNewGif.gif)
+![](updatedGif.gif)
 # react-native-custom-keyboard-mroads
 
 
