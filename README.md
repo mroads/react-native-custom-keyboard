@@ -1,13 +1,12 @@
-![](updatedGif.gif)
 # react-native-custom-keyboard-mroads
 
+![](updatedGif..gif)
 
 This is a Custom keyboard which can be used in a React Native project for text input. This keyboard comes with few inbuilt features which is commonly not available with the device keyboard.
 
 The keyboard has the following features:
 
 1. There are 6 sizes supported which can be used as per the requirement in different screens and different components namely "xsmall", "small", "medium", "large", "xlarge" and "xxl". The default size is set to large. Refer the below snippet to get comfortable with the syntax of using size. This is an optional prop.
-
 ```bash
 <Keyboard size="large" />
 ```
