@@ -44,38 +44,38 @@ const keyboardSizeConfig = {
   xsmall: {
     keyboardButtonContainerStyle: { width: 40, height: 30 },
     keyboardButtonTextStyle: { fontSize: 16 },
-    domainButtonStyle: { width: 55, height: 30 },
-    domainTextStyle: { fontSize: 10 },
+    domainButtonStyle: { width: 100, height: 30 },
+    domainTextStyle: { fontSize: 14 },
   },
   small: {
     keyboardButtonContainerStyle: { width: 40, height: 40 },
     keyboardButtonTextStyle: { fontSize: 18 },
-    domainButtonStyle: { width: 55, height: 40 },
-    domainTextStyle: { fontSize: 10 },
+    domainButtonStyle: { width: 120, height: 40 },
+    domainTextStyle: { fontSize: 15 },
   },
   medium: {
     keyboardButtonContainerStyle: { width: 60, height: 50 },
     keyboardButtonTextStyle: { fontSize: 20 },
-    domainButtonStyle: { width: 75, height: 50 },
-    domainTextStyle: { fontSize: 12 },
+    domainButtonStyle: { width: 140, height: 50 },
+    domainTextStyle: { fontSize: 18 },
   },
   large: {
     keyboardButtonContainerStyle: { width: 77, height: 50 },
     keyboardButtonTextStyle: { fontSize: 22 },
-    domainButtonStyle: { width: 'auto', height: 50, paddingHorizontal: 10 },
+    domainButtonStyle: { width: 170, height: 50, paddingHorizontal: 10 },
     domainTextStyle: { fontSize: 20 },
   },
   xlarge: {
     keyboardButtonContainerStyle: { width: 85, height: 50 },
     keyboardButtonTextStyle: { fontSize: 22 },
-    domainButtonStyle: { width: 'auto', height: 50, paddingHorizontal: 20 },
+    domainButtonStyle: { width: 200, height: 50, paddingHorizontal: 20 },
     domainTextStyle: { fontSize: 20 },
   },
   xxl: {
     keyboardButtonContainerStyle: { width: 85, height: 74 },
     keyboardButtonTextStyle: { fontSize: 28 },
-    domainButtonStyle: { width: 100, height: 74 },
-    domainTextStyle: { fontSize: 28 },
+    domainButtonStyle: { width: 210, height: 74 },
+    domainTextStyle: { fontSize: 26 },
   },
 };
 
