@@ -1,19 +1,42 @@
 ![](keyboardNewGif.gif)
-# Setup
+# react-native-custom-keyboard-mroads
 
-This npm can be used to create different sized keyboards for a react-native-project.
+
+This is a Custom keyboard which can be used in a React Native project for text input. This keyboard comes with few inbuilt features which is commonly not available with the device keyboard.
+
+The keyboard has the following features:
+
+1. There are 6 sizes supported which can be used as per the requirement in different screens and different components namely "xsmall", "small", "medium", "large", "xlarge" and "xxl". The default size is set to large. Refer the below snippet to get comfortable with the syntax of using size. This is an optional prop.
+
+```bash
+<Keyboard size="large" />
+```
+
+2. The keyboard presently comes with two different themes namely "light" and "dark" which can be adjusted at any point of time simply by passing the theme as a prop. This is again an optional prop.
+
+```bash
+<Keyboard theme="dark" />
+```
+
+3. Two input formats are currently available with the keyboard. The inputType prop could be set either to "email" or "text". When set to "email", we get some domain suggestions which can be used handy. An optional prop again. 
+
+```bash
+<Keyboard inputType="email" />
+```
+
+NOTE: Make sure you are passing the exact names mentioned above as prop when choosing different size, theme and inputType. The keyboard needs to have the two required props along with the other optional props. Refer the below table for more details.
 
 ## Installation
 
 Use the package manager to install.
 
 ```bash
-`$ npm install react-native-custom-keyboard --save`
+`$ npm install react-native-custom-keyboard-mroads --save`
 ```
  or
 
 ```bash
-`$ yarn add react-native-custom-keyboard`
+`$ yarn add react-native-custom-keyboard-mroads`
 ```
 
 ## Usage
@@ -23,9 +46,9 @@ Use the package manager to install.
 
 | Prop           | Required|     Default     |   Type   | Description                                                                                                 |
 | :---------------- | :-------------: | :-------------: | :------: | :---------------------------------------------------------------------------------------------------------- |
-| theme     |      False      |     -       |  `String`  | Determines the theme of the keyboard, either 'Dark' or  'Light'.|
-| size           |      False       |      -      |  `String`  | Determines the size of the keyboard. |
-| input type    |    False      |       -        | `String` | Determines the type of the input you require. Is either 'email' or 'text'.                                                                              |
+| theme     |      False      |     dark      |  `String`  | Determines the theme of the keyboard, either 'Dark' or  'Light'.|
+| size           |      False       |      xlarge      |  `String`  | Determines the size of the keyboard. |
+| input type    |    False      |       text        | `String` | Determines the type of the input you require. Is either 'email' or 'text'.                                                                              |
 | onInput         |     True       |      () => {}         | `Function` | Called when there is a text change on keyboard button press. | 
 | value        |      True       |      -      | String | The value entered using the keyboard. | 
 
@@ -50,13 +73,15 @@ changeTextHandler = value => {
     this.setState({ textContent: value });
   }
 
-function MyKeyboard() {
-  return (
-    <Keyboard
-       onInput={this.changeTextHandler}
-       value={this.state.textContent}
-    />
-   );
+class MyKeyboard extends React.Component() {
+  render(){
+   return (
+     <Keyboard
+        onInput={this.changeTextHandler}
+        value={this.state.textContent}
+     />
+    );
+   }
  }
 ```
 

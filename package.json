@@ -8,7 +8,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "react-native-custom-keyboard-mroads",
+    "custom-keyboard",
+    "theme-available",
+    "size-available",
+    "keyboards"
   ],
   "license": "MIT",
   "licenseFilename": "LICENSE",
