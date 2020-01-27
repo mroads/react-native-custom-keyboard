@@ -1,6 +1,6 @@
 # react-native-custom-keyboard-mroads
 
-![](updatedGif..gif)
+![](updatedGif.gif)
 
 This is a Custom keyboard which can be used in a React Native project for text input. This keyboard comes with few inbuilt features which is commonly not available with the device keyboard.
 
