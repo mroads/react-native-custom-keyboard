@@ -62,6 +62,7 @@ Use the package manager to install.
 ### Basic
 ```javascript
 
+import React from 'react';
 import Keyboard from 'react-native-custom-keyboard-mroads';
 
 state = {
@@ -82,6 +83,8 @@ class MyKeyboard extends React.Component() {
     );
    }
  }
+
+export default MyKeyboard;
 ```
 
 ### Advanced
