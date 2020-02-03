@@ -82,6 +82,7 @@ const keyboardSizeConfig = {
 class Keyboard extends Component<Props> {
   constructor(props) {
     super(props);
+    const { disableEnterButton } = this.props;
     this.allIndices = {
       regularIndices: [0, 1, 2, 3, 4],
       specialNormalIndices: [0, 5, 6, 7],
@@ -91,6 +92,17 @@ class Keyboard extends Component<Props> {
       passswordSpecialIndices: [6, 10, 11, 12, 9],
       passswordAccentIndices: [0, 13, 14, 15, 9],
     };
+    if (disableEnterButton) {
+      this.allIndices = {
+        regularIndices: [0, 1, 24, 3, 4],
+        specialNormalIndices: [0, 25, 6, 7],
+        emailNormalIndices: [23, 0, 1, 24, 3, 10],
+        emailSpecialIndices: [0, 6, 7, 8, 4, 25],
+        passswordNormalIndices: [0, 1, 24, 3, 9],
+        passswordSpecialIndices: [6, 10, 11, 12, 9],
+        passswordAccentIndices: [0, 13, 14, 15, 9],
+      };
+    }
     const initialIndices = {
       text: this.allIndices.regularIndices,
       email: this.allIndices.emailNormalIndices,

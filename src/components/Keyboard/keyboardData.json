@@ -690,6 +690,64 @@
         "text": "@outlook.com",
         "isDomain": true
       }
+    ],
+    [
+      {
+        "text": "a"
+      },
+      {
+        "text": "s"
+      },
+      {
+        "text": "d"
+      },
+      {
+        "text": "f"
+      },
+      {
+        "text": "g"
+      },
+      {
+        "text": "h"
+      },
+      {
+        "text": "j"
+      },
+      {
+        "text": "k"
+      },
+      {
+        "text": "l"
+      }
+    ],
+    [
+      {
+        "text": "@"
+      },
+      {
+        "text": "#"
+      },
+      {
+        "text": "$"
+      },
+      {
+        "text": "%"
+      },
+      {
+        "text": "&"
+      },
+      {
+        "text": "-"
+      },
+      {
+        "text": "+"
+      },
+      {
+        "text": "("
+      },
+      {
+        "text": ")"
+      }
     ]
   ]
   
