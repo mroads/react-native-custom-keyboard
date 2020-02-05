@@ -50,6 +50,7 @@ Use the package manager to install.
 | input type    |    False      |       text        | `String` | Determines the type of the input you require. Is either 'email' or 'text'.                                                                              |
 | onInput         |     True       |      () => {}         | `Function` | Called when there is a text change on keyboard button press. | 
 | value        |      True       |      -      | String | The value entered using the keyboard. | 
+|disableEnterButton        |      False       |      false      | Boolean | The enter or return button on keyboard can be disaled when required. | 
 
 ### Sizes Available
 | xsmall         |     small    |   medium   | large                                                                                                |     xlarge    |     xxl    |
@@ -122,6 +123,7 @@ changeTextHandler = value => {
                   size="xlarge"
                   theme="dark"
                   value={this.state.textContent}
+                  disableEnterButton /* Disables the enter button on keyboard */
                 />
             </View>
           </View>
