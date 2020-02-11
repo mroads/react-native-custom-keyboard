@@ -80,9 +80,10 @@ const keyboardSizeConfig = {
 };
 
 class Keyboard extends Component<Props> {
+
   constructor(props) {
     super(props);
-    const { disableEnterButton } = this.props;
+    const { disableEnterButton, disableCapsLock } = this.props;
     this.allIndices = {
       regularIndices: [0, 1, 2, 3, 4],
       specialNormalIndices: [0, 5, 6, 7],
@@ -99,6 +100,17 @@ class Keyboard extends Component<Props> {
         emailNormalIndices: [23, 0, 1, 24, 3, 10],
         emailSpecialIndices: [0, 6, 7, 8, 4, 25],
         passswordNormalIndices: [0, 1, 24, 3, 9],
+        passswordSpecialIndices: [6, 10, 11, 12, 9],
+        passswordAccentIndices: [0, 13, 14, 15, 9],
+      };
+    }
+    if (disableCapsLock) {
+      this.allIndices = {
+        regularIndices: [0, 1, 2, 26, 4],
+        specialNormalIndices: [0, 5, 6, 7],
+        emailNormalIndices: [23, 0, 1, 2, 26, 10],
+        emailSpecialIndices: [0, 6, 7, 8, 4, 5],
+        passswordNormalIndices: [0, 1, 2, 26, 9],
         passswordSpecialIndices: [6, 10, 11, 12, 9],
         passswordAccentIndices: [0, 13, 14, 15, 9],
       };
@@ -279,7 +291,7 @@ class Keyboard extends Component<Props> {
 
   render() {
     const {
-      keyboardTitleStyle, title, size = 'xlarge', theme = 'dark',
+      keyboardTitleStyle, title, size = 'xlarge', theme = 'dark', keysToDisable,
     } = this.props;
     const {
       indices, isSpecial, isAccent, isCaps, capsLock,
@@ -301,7 +313,8 @@ class Keyboard extends Component<Props> {
               {keyboardData[index]
                 && keyboardData[index].map((char, index) => {
                   let text = char.digit ? char : char.text;
-                  if (!isSpecial && !isAccent && text === 'abc') text = '!#$';
+                  if (!(keysToDisable && keysToDisable.find(im => text === im))) {
+                    if (!isSpecial && !isAccent && text === 'abc') text = '!#$';
                   if (isSpecial && !isAccent && text === '!#$') text = 'abc';
                   if (!isAccent && !isSpecial && text === 'abc') text = 'àáâ';
                   if (isAccent && !isSpecial && text === 'àáâ') text = 'abc';
@@ -343,6 +356,7 @@ class Keyboard extends Component<Props> {
                       ]}
                     />
                   );
+                  }
                 })}
             </View>
           ))}
