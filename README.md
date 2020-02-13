@@ -51,6 +51,8 @@ Use the package manager to install.
 | onInput         |     True       |      () => {}         | `Function` | Called when there is a text change on keyboard button press. | 
 | value        |      True       |      -      | String | The value entered using the keyboard. | 
 |disableEnterButton        |      False       |      false      | Boolean | The enter or return button on keyboard can be disaled when required. | 
+|disableCapsLock        |      False       |      false      | Boolean | Removes the Caps lock button on the keyboard when passed as true. | 
+|keysToDisable        |      False       |     []      |Array | The characters passed to this props as array will remove them from the keyboard. Thus, giving flexibility of choosing buttons visibility on keyboard. The characters passed should all be in lowercase. |
 
 ### Sizes Available
 | xsmall         |     small    |   medium   | large                                                                                                |     xlarge    |     xxl    |
@@ -124,6 +126,8 @@ changeTextHandler = value => {
                   theme="dark"
                   value={this.state.textContent}
                   disableEnterButton /* Disables the enter button on keyboard */
+                  disableCapsLock /* Disables the Caps Lock button.*/
+                  keysToDisable={['!', '?', '@']} /* Removes !, ? and @ from the keyboard. */
                 />
             </View>
           </View>
