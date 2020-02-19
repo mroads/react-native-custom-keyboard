@@ -212,16 +212,16 @@ class Keyboard extends Component<Props> {
     //   passswordNormalIndices,
     //   passswordSpecialIndices,
     // } = this.allIndices;
-    switch (char) {
-      // case 'backspace':
-      // onInput(value.slice(0, -1));
-      // if (value.slice(0, -1) === '') {
-      //   this.setState({
-      //     isCaps: true,
-      //     capsLock: false,
-      //   });
-      // }
-      // break;
+    switch (char.text) {
+      case 'backspace':
+      onInput(value.slice(value.length + 1));
+      if (value.slice(0, -1) === '') {
+        this.setState({
+          isCaps: true,
+          capsLock: false,
+        });
+      }
+      break;
       case '':
         break;
       case 'shift': {
@@ -294,7 +294,7 @@ class Keyboard extends Component<Props> {
       keyboardTitleStyle, title, size = 'xlarge', theme = 'dark', keysToDisable,
     } = this.props;
     const {
-      indices, isSpecial, isAccent, isCaps, capsLock,
+      indices, isSpecial, isAccent, isCaps, capsLock, value,
     } = this.state;
     const keyboardContainerStyle = [keyboardThemeConfig[theme].keyboardContainer];
     return (
@@ -328,7 +328,7 @@ class Keyboard extends Component<Props> {
                       theme={theme}
                       onPress={() => this.onPress(text)}
                       // eslint-disable-next-line prettier/prettier
-                      onLongPress={() => this.onLongPress(char.digit ? char.digit : text === 'shift' ? text : '')}
+                      onLongPress={() => this.onLongPress(char)}
                       key={text.digit ? text.digit + index : text + index}
                       keyboardButtonContainerStyle={[
                         char.isDomain
